@@ -24,7 +24,7 @@ void makeMove(bool turn, string row, string col) {
   int colIndex = stoi(col);
 
   if (rowIndex >= 0 && rowIndex <= 2 && colIndex >= 0 &&
-      colIndex <= 2) { // if statement checks if the row and col are valid
+      colIndex <= 2) { // if statement checks if the row and col are valid integers
     // this blew my mind, apperently this is a "nested ternary operator" this is
     // sick. thanks to chatgpt for introducing this to me so &position is a
     // reference and in these lines we make a connection from &position to the

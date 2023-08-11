@@ -7,16 +7,16 @@ simply run these files and a terminal will popup.
 
 # My goal
 my goal with this project was to start learning c++,
-i'm pretty happy with how far i have gotten at this point of course the game is not done but the baseline is there.
+i'm pretty happy with how far i have gotten at this point, of course the game is not done but the baseline is there.
 
 while making this project i learned a bit about the basic fundamentals of c++ and
 what 'references' and 'nested ternary operators' are and i was exited to use them in my code.
 
-i also found myself stuck in this project learning the fundemantels of c++.
+i also found myself stuck alot even in this simple project while learning the fundemantels of c++.
 i am able to think an spit out code very easely in python but doing the same thing in c++ was though.
 eventually i ended up in a long debugging session with my friend chatgpt and he introduced references and nested ternary operators,
 i was confused and exited at the same time so i interegated chatgpt and wringed all the information he had on the subject in question out of him.
-when i felt comfortable i decided to use it in my code and i put a detailed note asside the code so i could come back to it later.
+when i felt comfortable i decided to use them in my code and i put a detailed note asside the code so i could come back to it later.
 
 i also learned that in c++ i have to think very differently then with python,
 python simply does not give a sh*t and you are able to write just about anything your tiny wringeld-up brain can spit out,

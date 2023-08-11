@@ -22,7 +22,7 @@ i also learned that in c++ i have to think very differently then with python,
 python simply does not give a sh*t and you are able to write just about anything your tiny wringeld-up brain can spit out,
 in c++ i had to give everything i did a second thought and some extra love and attention before it was to late and i had to throw the code in the trash.
 
-i shot myself in my foot numerous times with my own stupid code and instead of going to the doctor to amputate it,
-i tried to fix it myself by trying to get the bullet out of my foot with a knife, sometimes i when was able to get the bullet out but i was left with a way bigger wound then it first was. it did not solve anything i just gave myself more problems and less will to live.
+i shot myself in my foot numerous times with my own stupid code and instead of going to the doctor to amputate my foot,
+i tried to fix it myself by trying to get the bullet out of my foot with a knife, sometimes i was able to get the bullet out but i was left with a way bigger wound then it first was. it did not solve anything i just gave myself more problems and less will to live.
 that is the best way i could describe shooting myself in my foot with c++.
 but besides that i am glad i started this project and i will finish it soon!

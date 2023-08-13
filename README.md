@@ -26,3 +26,5 @@ i shot myself in my foot numerous times with my own stupid code and instead of g
 i tried to fix it myself by trying to get the bullet out of my foot with a knife, sometimes i was able to get the bullet out but i was left with a way bigger wound then it first was. it did not solve anything i just gave myself more problems and less will to live.
 that is the best way i could describe shooting myself in my foot with c++.
 but besides that i am glad i started this project and i will finish it soon!
+
+edit: this project is finished!! ....for now

@@ -7,6 +7,7 @@ string columnPos = "";
 bool running = true;
 bool turn = true;
 bool validMove = false;
+bool win = false;
 
 string pos_00 = " ", pos_01 = " ", pos_02 = " ", pos_10 = " ", pos_11 = " ",
        pos_12 = " ", pos_20 = " ", pos_21 = " ", pos_22 = " ";
@@ -57,20 +58,23 @@ bool makeMove(bool turn, string row, string col) {
         // opinion less readable, i do not want to spend to much time at
         // tinkering with that for now. the upside is is that this nested
         // ternary operators are shown as a if statement and i like that because
-        // it does exectly the same and it helps visualising complex code a lot
-
-        if (turn) {
-          position = "X";
+        // it does exactly the same and it helps visualising complex code a lot
+        if (position == " ") {
+          if (turn) {
+            position = "X";
+          } else {
+            position = "O";
+          }
         } else {
-          position = "O";
+          cout << "these coordinates already contain a value" << endl;
+          return false;
         }
         return true;
       } else {
         return false;
       }
     } else {
-      cout << "you did not put in the correct input, use 0,1 and 2 as input"
-           << endl;
+      cout << "" << endl;
       return false;
     }
   } catch (const exception &e) {
@@ -78,7 +82,8 @@ bool makeMove(bool turn, string row, string col) {
     // The caught exception is stored in the variable e.
 
     // std::cerr is the cout for error messages
-    cerr << "you did not put in the correct input, use 0,1 and 2 as input. "
+    cerr << "the flux capacitor was overloaded with flux, delorean needs "
+            "fixing. "
             "details:"
          << e.what() << endl;
     // The e.what() function retrieves the error message.
@@ -86,33 +91,63 @@ bool makeMove(bool turn, string row, string col) {
   }
 }
 
+bool winCheck() {
+  win = (pos_11 == " ")                          ? false
+        : (pos_11 == pos_10 && pos_11 == pos_12) ? true
+        : (pos_11 == pos_20 && pos_11 == pos_02) ? true
+        : (pos_11 == pos_01 && pos_11 == pos_21) ? true
+                                                 : false;
+  if (win) {
+    return win;
+  }
+  win = (pos_00 == " ")                          ? false
+        : (pos_00 == pos_01 && pos_00 == pos_02) ? true
+        : (pos_00 == pos_10 && pos_00 == pos_20) ? true
+                                                 : false;
+  if (win) {
+    return win;
+  }
+  win = (pos_22 == " ")                          ? false
+        : (pos_22 == pos_21 && pos_22 == pos_20) ? true
+        : (pos_22 == pos_12 && pos_22 == pos_02) ? true
+                                                 : false;
+  return win;
+}
+
 int main() {
   drawBoard();
-  cout << "the game works as follows:" << endl
-       << "the game will ask for input first the row so 1,2 or 3 and then the "
-          "column so A,B or C. want to quit the game? for now use ctrl+c there "
-          "is now end to the game YET"
-       << endl;
   while (running) {
-    if (turn) {
-      cout << "X make your move(row):";
-      cin >> rowPos;
-      cout << "X make your move(column):";
-      cin >> columnPos;
-      validMove = makeMove(turn, rowPos, columnPos);
-      drawBoard();
+    winCheck();
+    if (!win) {
+      if (turn) {
+        cout << "X make your move(row):";
+        cin >> rowPos;
+        cout << "X make your move(column ):";
+        cin >> columnPos;
+        validMove = makeMove(turn, rowPos, columnPos);
+        drawBoard();
+      } else {
+        cout << "O make your move(row):";
+        cin >> rowPos;
+        cout << "O make your move(column):";
+        cin >> columnPos;
+        validMove = makeMove(turn, rowPos, columnPos);
+        drawBoard();
+      }
+      if (validMove) {
+        turn = !turn;
+      }
+      validMove = false;
     } else {
-      cout << "O make your move(row):";
+      turn == true
+          ? cout << "O was the one with the bigger brain, thanks for playing!!"
+                 << endl
+          : cout << "X was the one with the bigger brain, thanks for playing!!"
+                 << endl;
+      cout << "type something then press enter to quit";
       cin >> rowPos;
-      cout << "O make your move(column):";
-      cin >> columnPos;
-      validMove = makeMove(turn, rowPos, columnPos);
-      drawBoard();
+      running = false;
     }
-    if (validMove) {
-      turn = !turn;
-    }
-    validMove = false;
   }
   return 0;
 }
